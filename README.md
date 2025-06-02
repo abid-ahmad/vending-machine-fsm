@@ -26,7 +26,6 @@ The design was fully tested and deployed on an FPGA board to verify real hardwar
 ## 📂 Files Included
 - `fsm.v` – Main Verilog FSM module
 - `testbench.v` – Verilog testbench to simulate functionality
-- *(Optional)* `diagram.png` – State diagram of the FSM
 
 ---
 
