@@ -46,3 +46,19 @@ Electrical and Computer Engineering student – Wayne State University
 1. Open the project in your Verilog simulator (Vivado)
 2. Compile `fsm.v` and `testbench.v`
 3. Run the simulation and observe the output waveform or testbench logs
+
+---
+
+## 🎥 Demo Video
+
+[![Watch the demo](https://img.youtube.com/vi/yourvideoID/0.jpg)](https://youtu.be/yourvideoID)
+
+---
+
+## 🧠 What I Learned
+
+- How to design and debug FSMs in Verilog
+- Applying state diagrams to real hardware behavior
+- Driving LED output based on state logic
+- Importance of modularity and clear state definitions
+- Hands-on FPGA deployment and timing considerations
