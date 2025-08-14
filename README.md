@@ -84,5 +84,6 @@ Click the badge above to view the full PDF of the FSM state diagram.
 ## 👤 Author
 **Abid Ahmad**  
 Electrical & Computer Engineering, Wayne State University
+🌐 [LinkedIn](https://www.linkedin.com/in/abid-ahmad-83bb0527b) 
 
 ---
