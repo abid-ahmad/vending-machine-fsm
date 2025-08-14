@@ -73,8 +73,11 @@ Developed as part of my **Honors College independent project** at **Wayne State 
 
 ---
 
-## 🧭 State Diagram
-[📄 View the State Diagram (PDF)](FSM_VendingMachine_StateDiagram.pdf)
+## 📍 State Diagram
+
+[![View State Diagram](https://img.shields.io/badge/View%20PDF-State%20Diagram-blue?style=for-the-badge&logo=adobeacrobatreader)](report/FSM_VendingMachine_StateDiagram.pdf)
+
+Click the badge above to view the full PDF of the FSM state diagram.
 
 -----
 
