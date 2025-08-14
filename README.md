@@ -1,75 +1,70 @@
-# 🎯 vending-machine-fsm
+# 🎯 Vending Machine FSM – Verilog HDL (Honors College Project)
 
-This project implements a Finite State Machine (FSM) for a vending machine using **Verilog HDL**. It accepts coins in $0.25 increments and dispenses products based on total credit inserted. The design includes combo purchase logic, reset functionality, LED-based output display, and a testbench for simulation.
-
-This version of the project was developed independently for my **Honors College project**. The original version was a team effort (with **Valentina Shabi** and myself), supporting two products: candy ($0.25) and soda ($0.50), with a max of $0.75. For the honors upgrade, I **designed a full FSM from scratch**, added a **third product (chips – $0.75)**, and implemented **complete combo logic**, **state transitions**, and **hardware-based LED feedback**.
-
-✅ The design was **fully tested and deployed on the Nexys A7 FPGA board** with the **Artix-7 100T (XC7A100T-1CSG324C)** chip to verify real hardware behavior and output accuracy.
+A **Finite State Machine (FSM)** vending machine designed in **Verilog HDL**, supporting incremental coin inputs, multiple product prices, combo purchase logic, and **real hardware testing** on the **Nexys A7 FPGA board**.  
+Developed as part of my **Honors College independent project** at **Wayne State University**.
 
 ---
 
-## 💡 Features
-
-- FSM architecture using **Enable-Based Next State FSM (EBNFSM)**
-- Accepts coins incrementally: **$0.25 → $0.50 → $0.75**
-- Products:
-  - 🍬 Candy – $0.25
-  - 🥤 Soda – $0.50
+## 📌 Project Highlights
+- Built a **fully custom FSM** from scratch for the honors upgrade.
+- Expanded from a 2-product design to **3 products**:
+  - 🍬 Candy – $0.25  
+  - 🥤 Soda – $0.50  
   - 🍟 Chips – $0.75
-- Combo switch enables bundled product dispensing at $0.75
-- Reset and idle state handling
-- LED-based outputs showing:
-  - Coin progress
-  - Dispensing state
-- Clean and modular Verilog implementation
-- Verified on physical FPGA hardware (Nexys A7)
+- Implemented **combo logic** allowing bundled purchases at $0.75.
+- Integrated **LED indicators** for coin progress and dispensing states.
+- Verified functionality through **simulation** and **FPGA hardware deployment**.
 
 ---
 
-## 📂 Files Included
-
-- `fsm.v` – Main Verilog FSM module
-- `testbench.v` – Simulation testbench
+## 🛠️ Features
+- FSM architecture using **Enable-Based Next State FSM (EBNFSM)**.
+- Coin recognition in **$0.25 increments**: $0.25 → $0.50 → $0.75.
+- Idle and reset handling for robust operation.
+- Clean, modular Verilog implementation for maintainability.
+- **Testbench included** for simulation verification.
 
 ---
 
-## 🛠️ Tools Used
+## 📂 Files in Repository
+- `fsm.v` – Main FSM module.
+- `testbench.v` – Verilog testbench for simulation.
+- State diagram & design notes (if available).
 
-- **Language**: Verilog HDL  
-- **Simulation**: Vivado Design Suite  
-- **Hardware**: Digilent **Nexys A7** FPGA board  
+---
+
+## 🧠 Skills Gained
+- **Digital Logic Design** – FSM architecture & state transitions.
+- **Hardware Description Languages** – Verilog HDL.
+- **Simulation & Debugging** – Using Vivado Design Suite.
+- **FPGA Deployment** – Programming Nexys A7 (Artix-7 100T) board.
+- **Hardware-Software Integration** – Translating logical design to physical outputs.
+
+---
+
+## 💻 Tools & Hardware
+- **Language**: Verilog HDL
+- **IDE/Simulator**: Vivado Design Suite
+- **Hardware**: Digilent Nexys A7 FPGA Board  
   - Chip: **Xilinx Artix-7 100T (XC7A100T-1CSG324C)**
 
 ---
 
-## 👨‍💻 Author
-
-**Abid Ahmad**  
-Electrical and Computer Engineering student  
-**Wayne State University**
-
----
-
-## 📎 How to Simulate
-
-1. Open the project in **Vivado**.
-2. Add `fsm.v` and `testbench.v` to a new project.
-3. Run behavioral simulation.
-4. Observe testbench outputs and waveform behavior for verification.
+## ▶️ How to Simulate
+1. Open **Vivado** and create a new project.
+2. Add `fsm.v` and `testbench.v` to the project.
+3. Run **Behavioral Simulation**.
+4. Check the waveform output for correct FSM operation.
 
 ---
 
-## 🎥 Demo Video
-
+## 🎥 Demo
 [![Watch the demo](https://img.youtube.com/vi/mEfpK1brveU/0.jpg)](https://youtu.be/mEfpK1brveU)
 
 ---
 
-## 🧠 What I Learned
+## 👤 Author
+**Abid Ahmad**  
+Electrical & Computer Engineering, Wayne State University
 
-- Designing and debugging FSMs in Verilog from scratch
-- Translating state diagrams into real-world circuit behavior
-- Implementing LED output based on control logic
-- Managing edge cases with resets and combos
-- Deploying Verilog designs on **real FPGA hardware**
-- Importance of modularity and simulation before synthesis
+---
