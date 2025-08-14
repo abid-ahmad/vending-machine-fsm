@@ -73,6 +73,11 @@ Developed as part of my **Honors College independent project** at **Wayne State 
 
 ---
 
+## 🧭 State Diagram
+[📄 View the State Diagram (PDF)](FSM_VendingMachine_StateDiagram.pdf)
+
+-----
+
 ## 👤 Author
 **Abid Ahmad**  
 Electrical & Computer Engineering, Wayne State University
