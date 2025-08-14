@@ -69,8 +69,7 @@ Developed as part of my **Honors College independent project** at **Wayne State 
 ---
 ## ⏱ Timing Diagrams & Verification
 
-## ⏱ Timing Diagrams & Verification
-[📄 Click here to view the full PDF](FSM_VendingMachine_Verification_TimingDiagrams.pdf)
+**[FSM_VendingMachine_Verification_TimingDiagrams.pdf](report/FSM_VendingMachine_Verification_TimingDiagrams.pdf)**
 
 ---
 
