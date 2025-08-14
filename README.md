@@ -67,6 +67,21 @@ Developed as part of my **Honors College independent project** at **Wayne State 
 - [**Public Technical Report (Recruiter-Friendly)**](report/FSM_Vending_Machine_Report_Public.pdf) – Clean, visual summary of design, implementation, and FPGA testing results.  
 - [**Full Academic Report**](report/FSM_Vending_Machine_Report_Academic.pdf) – Original honors project submission for ECE2610.
 ---
+## ⏱ Timing Diagrams & Verification
+
+[![Open timing diagrams PDF](report/images/timing_preview.png)](report/FSM_VendingMachine_Verification_TimingDiagrams.pdf)
+<sub>Click the image to open the full PDF.</sub>
+
+<details>
+<summary>What’s inside</summary>
+
+- State transition waveform (IDLE → Q25 → Q50 → DISPENSE …)  
+- Coin input strobes & debounce  
+- Combo-enable logic paths  
+- Output LEDs (dispense/cancel/change)  
+- Reset / async clear behavior  
+</details>
+---
 
 ## 👤 Author
 **Abid Ahmad**  
