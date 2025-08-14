@@ -62,6 +62,11 @@ Developed as part of my **Honors College independent project** at **Wayne State 
 [![Watch the demo](https://img.youtube.com/vi/mEfpK1brveU/0.jpg)](https://youtu.be/mEfpK1brveU)
 
 ---
+## 📄 Documentation
+
+- [**Public Technical Report (Recruiter-Friendly)**](report/FSM_Vending_Machine_Report_Public.pdf) – Clean, visual summary of design, implementation, and FPGA testing results.  
+- [**Full Academic Report**](report/FSM_Vending_Machine_Report_Academic.pdf) – Original honors project submission for ECE2610.
+---
 
 ## 👤 Author
 **Abid Ahmad**  
