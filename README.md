@@ -101,6 +101,10 @@ Developed as part of my **Honors College independent project** at **Wayne State 
 [![Watch the demo](https://img.youtube.com/vi/mEfpK1brveU/0.jpg)](https://youtu.be/mEfpK1brveU)
 
 ---
+**Author:** Abid Ahmad  
+Electrical & Computer Engineering — Wayne State University  
+🔧 Focus: Mechanical design integration, hardware prototyping, and data-driven projects  
+🌐 [LinkedIn](https://www.linkedin.com/in/abid-ahmad-83bb0527b) 
 
-## 🙏 Credits
+##  Credits
 Special thanks to **Mohammad Alhawari** for guidance and support throughout the project.
