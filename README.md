@@ -22,7 +22,7 @@ Developed as part of my **Honors College independent project** at **Wayne State 
 ## 🛠 Features
 - ⚙️ FSM architecture using **Enable-Based Next State FSM (EBNFSM)**.
 - 💰 Coin recognition in **$0.25 increments**: $0.25 → $0.50 → $0.75.
-- ⏹ Idle and reset handling for robust operation.
+-  ⏹ Idle and reset handling for robust operation.
 - 🧩 Clean, modular Verilog implementation for maintainability.
 - 🧪 **Testbench included** for simulation verification.
 
