@@ -1,7 +1,7 @@
 # 🎯 Vending Machine FSM – Verilog HDL (Honors College Project)
 
 A **Finite State Machine (FSM)** vending machine designed in **Verilog HDL**, supporting incremental coin inputs, multiple product prices, combo purchase logic, and **real hardware testing** on the **Nexys A7 FPGA board**.  
-Developed as part of my **Honors College Independent Project** at **Wayne State University**.
+Developed as part of my **Honors College independent project** at **Wayne State University**.
 
 ---
 
@@ -13,91 +13,91 @@ Developed as part of my **Honors College Independent Project** at **Wayne State 
   - 🍟 Chips – $0.75
 - Implemented **combo logic** allowing bundled purchases at $0.75.
 - Integrated **LED indicators** for coin progress and dispensing states.
-- Verified through **simulation** & **FPGA hardware deployment**.
+- Verified functionality through **simulation** and **FPGA hardware deployment**.
 
 ---
 
-## 🛠️ Features
+## 🛠 Features
 - FSM architecture using **Enable-Based Next State FSM (EBNFSM)**.
 - Coin recognition in **$0.25 increments**: $0.25 → $0.50 → $0.75.
-- Idle/reset handling for robust operation.
-- Modular Verilog implementation for easy updates.
-- **Two testbenches** for simulation verification.
+- Idle and reset handling for robust operation.
+- Clean, modular Verilog implementation for maintainability.
+- **Testbench included** for simulation verification.
 
 ---
 
-## 📂 Repository Structure
+## 📂 Repository File Map
 
-| 📁 Folder / File | 📄 Description | 🔗 Direct Link |
-|------------------|---------------|----------------|
-| **`code/`** | All Verilog source files & testbenches | [View Folder](code/) |
-| `VendingMachine_FSM.txt` | Main FSM logic | [Open](code/VendingMachine_FSM.txt) |
-| `VendingMachine_FSM_Top.txt` | Top-level module integration | [Open](code/VendingMachine_FSM_Top.txt) |
-| `VendingMachine_FSM_Testbench_1.txt` | Testbench – Scenario 1 | [Open](code/VendingMachine_FSM_Testbench_1.txt) |
-| `VendingMachine_FSM_Testbench_2.txt` | Testbench – Scenario 2 | [Open](code/VendingMachine_FSM_Testbench_2.txt) |
-| `VendingMachine_ClockDivider.txt` | Clock divider module | [Open](code/VendingMachine_ClockDivider.txt) |
-| `VendingMachine_Disp_Hex_Mux.txt` | Display multiplexer | [Open](code/VendingMachine_Disp_Hex_Mux.txt) |
-| `VendingMachine_Constraints.txt` | XDC constraints file | [Open](code/VendingMachine_Constraints.txt) |
-| **`report/`** | Documentation, diagrams & timing analysis | [View Folder](report/) |
-| `FSM_VendingMachine_Report_Academic.pdf` | Full academic report | [Open](report/FSM_VendingMachine_Report_Academic.pdf) |
-| `FSM_VendingMachine_Verification_TimingDiagrams.pdf` | Timing verification diagrams | [Open](report/FSM_VendingMachine_Verification_TimingDiagrams.pdf) |
-| `FSM_VendingMachine_StateDiagram.pdf` | State diagram | [Open](report/FSM_VendingMachine_StateDiagram.pdf) |
-| `vending_machine_fsm_full_project.zip` | Full Vivado project | [Download](code/vending_machine_fsm_full_project.zip) |
+| Category | File | Description |
+|----------|------|-------------|
+| **Main Code** | [VendingMachine_FSM.txt](code/VendingMachine_FSM.txt) | Core FSM logic |
+| | [VendingMachine_FSM_Top.txt](code/VendingMachine_FSM_Top.txt) | Top-level design integration |
+| | [VendingMachine_ClockDivider.txt](code/VendingMachine_ClockDivider.txt) | Clock divider module |
+| | [VendingMachine_Disp_Hex_Mux.txt](code/VendingMachine_Disp_Hex_Mux.txt) | Display driver for 7-seg multiplexing |
+| | [VendingMachine_Constraints.txt](code/VendingMachine_Constraints.txt) | FPGA pin constraints |
+| **Testbenches** | [FSM Testbench 1](code/VendingMachine_FSM_Testbench_1.txt) | Simulation for normal purchase |
+| | [FSM Testbench 2](code/VendingMachine_FSM_Testbench_2.txt) | Simulation for combo purchase |
+| **Reports** | [Public Report (Recruiter-Friendly)](report/FSM_Vending_Machine_Report_Public.pdf) | Visual + concise |
+| | [Full Academic Report](report/FSM_Vending_Machine_Report_Academic.pdf) | Honors project submission |
+| **Diagrams** | [State Diagram](report/FSM_VendingMachine_StateDiagram.pdf) | FSM states & transitions |
+| | [Timing Diagrams](report/FSM_VendingMachine_Verification_TimingDiagrams.pdf) | Simulation verification |
+| | [Schematic](report/FSM_VendingMachine_Schematic.pdf) | Hardware block-level schematic |
 
 ---
 
 ## 🧠 Skills Gained
 - **Digital Logic Design** – FSM architecture & state transitions.
-- **HDL Proficiency** – Verilog HDL design & debugging.
-- **Simulation & Testing** – Vivado simulation flow.
-- **FPGA Programming** – Bitstream generation & deployment.
-- **System Integration** – From HDL code to physical hardware.
+- **Hardware Description Languages** – Verilog HDL.
+- **Simulation & Debugging** – Using Vivado Design Suite.
+- **FPGA Deployment** – Programming Nexys A7 (Artix-7 100T) board.
+- **Hardware-Software Integration** – Translating logical design to physical outputs.
 
 ---
 
 ## 💻 Tools & Hardware
 - **Language**: Verilog HDL
-- **IDE**: Vivado Design Suite
-- **Hardware**: Digilent Nexys A7 FPGA (Artix-7 100T)
+- **IDE/Simulator**: Vivado Design Suite
+- **Hardware**: Digilent Nexys A7 FPGA Board  
+  - Chip: **Xilinx Artix-7 100T (XC7A100T-1CSG324C)**
 
 ---
 
-## ▶️ How to Run on FPGA
-1. **Download & Extract**  
-   - Click [here to download ZIP](code/vending_machine_fsm_full_project.zip).  
-   - Extract the ZIP using your OS file explorer or `unzip` command:
-     ```bash
-     unzip vending_machine_fsm_full_project.zip
-     ```
-2. **Open in Vivado**  
-   - Launch **Vivado** → `File` → `Open Project` → Select the extracted `.xpr` file.
-3. **Generate Bitstream**  
-   - Click **Generate Bitstream** (should succeed without errors if extracted correctly).
-4. **Program the FPGA**  
-   - Connect Nexys A7 → Open Hardware Manager → `Program Device`.
-5. **Test on Hardware**  
-   - Insert coins using switches/buttons.  
-   - Observe LED indicators & 7-segment display outputs.
+## ▶️ How to Run the Project
+
+### 🖥 Simulation
+1. Open **Vivado** and create a new project.
+2. Add the `.txt` files from `/code` (rename to `.v` when importing).
+3. Add the testbench file.
+4. Run **Behavioral Simulation**.
+5. Check waveform to verify correct FSM behavior.
+
+### ⚡ FPGA Deployment
+1. **Download full project**:
+   - [📦 vending_machine_fsm_full_project.zip](code/vending_machine_fsm_full_project.zip)
+2. **Extract the ZIP**:
+   - Windows: Right-click → "Extract All"
+   - macOS: Double-click to unzip
+3. Open the `.xpr` Vivado project file.
+4. Click **Generate Bitstream** ⚙️.
+5. Connect the **Nexys A7 board** via USB.
+6. Click **Program Device** → Select generated `.bit` file.
+
+### 🛠 Troubleshooting
+- ❌ **Bitstream fails to generate?**
+  - Ensure correct **Constraints (.xdc)** file is included.
+- ❌ **Display not working?**
+  - Check 7-seg wiring matches the constraints file.
+- ❌ **States stuck?**
+  - Reset FPGA and verify pushbutton inputs.
 
 ---
 
-## 🛠 Troubleshooting
-- **Bitstream Fails?** → Ensure all `.xdc` constraints are loaded.
-- **Display Issues?** → Verify `VendingMachine_Disp_Hex_Mux.txt` is included in project sources.
-- **No Output?** → Check FPGA jumper settings & re-program.
-
----
-
-## 📄 Documentation
-- [📘 Full Academic Report](report/FSM_VendingMachine_Report_Academic.pdf)  
-- [⏱ Timing Diagrams](report/FSM_VendingMachine_Verification_TimingDiagrams.pdf)  
-- [📍 State Diagram](report/FSM_VendingMachine_StateDiagram.pdf)  
+## 🎥 Demo
+[![Watch the demo](https://img.youtube.com/vi/mEfpK1brveU/0.jpg)](https://youtu.be/mEfpK1brveU)
 
 ---
 
 ## 👤 Author
 **Abid Ahmad**  
-Electrical & Computer Engineering – Wayne State University  
+Electrical & Computer Engineering, Wayne State University  
 🌐 [LinkedIn](https://www.linkedin.com/in/abid-ahmad-83bb0527b)
-
----
