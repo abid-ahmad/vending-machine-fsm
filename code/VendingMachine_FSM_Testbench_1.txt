@@ -1,0 +1,67 @@
+`timescale 1ns / 1ps
+
+module fsm_tb();
+
+reg clock, reset, c0, c1, c2, s_a, c_a;
+wire s_d, c_d, c_e;
+wire [3:0] disp_1, disp_2, disp_3, disp_4;
+parameter [3:0] A=4'b0000, B=4'b0001, C=4'b0010, D=4'b0011, E=4'b0100, F=4'b0101, G=4'b0110, H=4'b0111, I=4'b1000;
+
+fsm uut (.clock(clock), .reset(reset), .c0(c0), .c1(c1), .c2(c2), .s_a(s_a), .c_a(c_a), .disp_1(disp_1), .disp_2(disp_2), .disp_3(disp_3), .disp_4(disp_4), .s_d(s_d), .c_d(c_d), .c_e(c_e));
+
+initial
+begin
+clock=0; s_a=0; c_a=0; c0=0; c1=0; reset=1;
+end
+
+always #10 clock = ~clock;
+
+initial begin
+#20; reset=0;
+
+#20; c0=1;
+#20; c1=0;
+#20; c2=0;
+#20; c_a=1;
+#20; s_a=0;
+
+#20; c0=1;
+#20; c1=0;
+#20; c2=0;
+#20; c_a=0;
+#20; s_a=1;
+
+#20; c0=1;
+#20; c1=1;
+#20; c2=0;
+#20; c_a=1;
+#20; s_a=0;
+
+#20; c0=1;
+#20; c1=1;
+#20; c2=0;
+#20; c_a=0;
+#20; s_a=1;
+
+
+#20; c0=1;
+#20; c1=1;
+#20; c2=1;
+#20; c_a=0;
+#20; s_a=1;
+
+#20; c0=1;
+#20; c1=1;
+#20; c2=1;
+#20; c_a=1;
+#20; s_a=0;
+
+#20; c0=1;
+#20; c1=1;
+#20; c2=1;
+#20; c_a=1;
+#20; s_a=1;
+
+
+end
+endmodule

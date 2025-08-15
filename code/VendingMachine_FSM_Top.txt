@@ -1,0 +1,24 @@
+`timescale 1ns / 1ps
+
+module fsm_top(
+input wire clock,
+input wire reset,
+input wire s_a, c_a,ch_a, c0, c1, c2,
+output wire [3:0]an,
+output wire [7:0] sseg,
+output wire s_d, c_d, c_e,ch_d
+    );
+    
+//signal declaration
+//wire [3:0] a,b;
+wire [3:0] disp_1, disp_2, disp_3, disp_4;
+wire new_clock;
+//instantiate 7-segment LED Display module
+disp_hex_mux disp_unit
+(.clock(clock), .reset(reset), .hex3(disp_4), .hex2(disp_3), .hex1(disp_2), .hex0(disp_1), .dp_in(4'b1011), .an(an), .sseg(sseg));
+//instantiate the control counter to lower down the 50MHz to 10Hz
+cntr cntr_unit (.clock(clock), .out(new_clock));
+//instantiate the BCD counter
+fsm fsm_call (.clock(new_clock), .reset(reset),.ch_a(ch_a), .s_a(s_a), .c_a(c_a), .c0(c0), .c1(c1),
+.c2(c2), .disp_1(disp_1), .disp_2(disp_2), .disp_3(disp_3), .disp_4(disp_4), .ch_d(ch_d), .s_d(s_d), .c_d(c_d), .c_e(c_e));
+endmodule

@@ -1,0 +1,428 @@
+//`timescale 1ns / 1ps
+
+//module fsm(clock,reset,c0,c1,s_a,c_a,s_d,c_d,c_e,disp_1,disp_2,disp_3,disp_4);
+//input clock,reset,c0,c1,s_a,c_a;
+//output reg [3:0] disp_1,disp_2,disp_3,disp_4;
+//output reg s_d,c_d,c_e;
+//reg [2:0] y;
+//parameter [2:0] A=3'b000, B=3'b001, C=3'b010, D=3'b011, E=3'b100, F=3'b101, G=3'b110;
+
+//always @(posedge clock)
+
+//if (reset)
+//begin
+//y<=A;
+//s_d<=0; c_d<=0; c_e<=0;
+//disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+//end
+
+//else
+//case (y)
+
+//A:
+
+//begin
+//disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+//s_d<=0; c_d<=0; c_e<=0;
+
+//if (s_a)
+//begin
+//disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+//y<=A;
+//end
+//else if (c_a)
+//begin
+//disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+//end
+//else
+//y<=A;
+
+//case ({c1,c0})
+
+//2'b00: begin
+//y<=A;
+//end
+
+//2'b01: begin
+//disp_1=4'b0101;
+//disp_2=4'b0010; //25 cents displayed
+//disp_3=4'b0000;
+//y<=B;
+//end
+
+//2'b10: begin
+//disp_1=4'b0101;
+//disp_2=4'b0010; //25 cents
+//disp_3=4'b0000;
+//y<=B;
+//end
+
+//2'b11: begin
+//disp_1=4'b0000;
+//disp_2=4'b0101; //50
+//disp_3=4'b0000;
+//y<=E;
+//end
+
+//endcase
+//end
+
+//B: begin
+//if (s_a)
+//begin
+//y<=D;
+//end
+//else if (c_a)
+//begin
+//y<=C;
+//end
+//else if (c1 == 1 && c0 == 1)
+//begin
+//disp_1=4'b0000;
+//disp_2=4'b0101; //50
+//disp_3=4'b0000;
+//y<=E;
+//end
+//else
+//y<=B;
+//end
+
+//C: begin
+//disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+//c_d<=1;
+//c_e<=0;
+//y<=C;
+//end
+
+//D: begin
+//disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+//s_d<=0;
+//c_e<=1;
+//y<=D;
+//end
+
+//E: begin
+//disp_1=4'b0000;
+//disp_2=4'b0101; //50
+//disp_3=4'b0000;
+//if (c_a)
+//begin
+//y<=F;
+//end
+//else if (s_a)
+//y<=G;
+//else y<=E;
+//end
+
+//F: begin
+//disp_1=4'b0101;
+//disp_2=4'b0010; //25 cents 
+//disp_3=4'b0000;
+//c_d<=1;
+//c_e<=1;
+//y<=F;
+//end
+
+//G: begin
+//disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+//s_d<=1;
+//c_e<=0;
+//y<=G;
+//end
+
+//endcase
+//endmodule
+
+
+
+//`timescale 1ns / 1ps
+
+//module fsm(clock,reset,c0,c1,c2,c_a,s_a,s_d,c_d,c_e,disp_1,disp_2,disp_3,disp_4);
+//input clock,reset,c0,c1,c2,s_a,c_a;
+//output reg [3:0] disp_1,disp_2,disp_3,disp_4;
+//output reg s_d,c_d,c_e;
+//reg [3:0] y;
+//parameter [3:0] A=4'b0000, B=4'b0001, C=4'b0010, D=4'b0011, E=4'b0100, F=4'b0101, G=4'b0110, H=4'b0111, I=4'b1000;
+//wire [2:0] coin_input = {c2, c1, c0};
+
+//always @(posedge clock)
+
+//if (reset)
+//begin
+//y<=A;
+//s_d<=0; c_d<=0; c_e<=0;
+//disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+//end
+
+//else
+//case (y)
+
+//A:
+
+//begin
+//disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+//s_d<=0; c_d<=0; c_e<=0;
+
+//case (coin_input)
+
+//3'b100, 3'b010, 3'b001: begin
+//disp_1=4'b0101;
+//disp_2=4'b0010; //25 cents
+//disp_3=4'b0000;
+//y<=B;
+//end
+
+//3'b110, 3'b101, 3'b011: begin
+//disp_1=4'b0000;
+//disp_2=4'b0101; //50 cents
+//disp_3=4'b0000;
+//y<=E;
+//end
+
+//3'b111: begin
+//disp_1=4'b0101;
+//disp_2=4'b0111; //75 cents
+//disp_3=4'b0000;
+//y<=H;
+//end
+
+//default: y<=A;
+
+//endcase
+//end
+
+//B: begin
+//disp_1=4'b0101;
+//disp_2=4'b0010; //25 cents
+//disp_3=4'b0000;
+
+//case (coin_input)
+//3'b110, 3'b101, 3'b011: y<=E;
+//3'b111: y<=H;
+//default: begin
+//if (s_a)
+//y<=D;
+//else if (c_a)
+//y<=C;
+//else
+//y<=B;
+//end
+//endcase
+//end
+
+//C: begin
+//disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+//c_d<=1;
+//c_e<=0;
+//y<=A;
+//end
+
+//D: begin
+//disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+//s_d<=0;
+//c_e<=1;
+//y<=A;
+//end
+
+//E: begin
+
+//disp_1=4'b0000;
+//disp_2=4'b0101; //50
+//disp_3=4'b0000;
+
+//case (coin_input)
+//3'b111: y<=H;
+//default: begin
+//if (c_a)
+//y<=F;
+//else if (s_a)
+//y<=G;
+//else
+//y<=E;
+//end
+//endcase
+//end
+
+//F: begin
+//disp_1=4'b0101;
+//disp_2=4'b0010; //25 cents
+//disp_3=4'b0000;
+//c_d<=1;
+//c_e<=1;
+//y<=A;
+//end
+
+//G: begin
+//disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+//s_d<=1;
+//c_e<=0;
+//y<=A;
+//end
+
+//H: begin
+//disp_1=4'b0101;
+//disp_2=4'b0111; //75 cents
+//disp_3=4'b0000;
+//if (c_a && s_a)
+//y<=I;
+//else
+//y<=H;
+//end
+
+//I: begin
+//disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+//c_d<=1;
+//s_d<=1;
+//c_e<=0;
+//y<=A;
+//end
+
+//endcase
+//endmodule
+
+
+`timescale 1ns / 1ps
+
+module fsm(clock,reset,c0,c1,c2,c_a,s_a,ch_a,s_d,c_d,ch_d,c_e,disp_1,disp_2,disp_3,disp_4);
+input clock,reset,c0,c1,c2,s_a,c_a,ch_a;
+output reg [3:0] disp_1,disp_2,disp_3,disp_4;
+output reg s_d,c_d,c_e,ch_d;
+reg [3:0] y;
+parameter [3:0] A=4'b0000, B=4'b0001, C=4'b0010, D=4'b0011, E=4'b0100, F=4'b0101, G=4'b0110, H=4'b0111, I=4'b1000;
+wire [2:0] coin_input = {c2, c1, c0};
+
+always @(posedge clock)
+
+if (reset)
+begin
+y<=A;
+s_d<=0; c_d<=0; c_e<=0;
+disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+end
+
+else
+case (y)
+
+A:
+
+begin
+disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+s_d <= 0; c_d <= 0; c_e <= 0; ch_d <= 0;
+
+case (coin_input)
+
+3'b100, 3'b010, 3'b001: begin
+disp_1=4'b0101;
+disp_2=4'b0010; //25 cents
+disp_3=4'b0000;
+y<=B;
+end
+
+3'b110, 3'b101, 3'b011: begin
+disp_1=4'b0000;
+disp_2=4'b0101; //50 cents
+disp_3=4'b0000;
+y<=E;
+end
+
+3'b111: begin
+disp_1=4'b0101;
+disp_2=4'b0111; //75 cents
+disp_3=4'b0000;
+y<=H;
+end
+
+default: y<=A;
+
+endcase
+end
+
+B: begin
+disp_1=4'b0101;
+disp_2=4'b0010; //25 cents
+disp_3=4'b0000;
+
+case (coin_input)
+3'b110, 3'b101, 3'b011: y<=E;
+3'b111: y<=H;
+default: begin
+if (s_a)
+y<=D;
+else if (c_a)
+y<=C;
+else
+y<=B;
+end
+endcase
+end
+
+C: begin
+disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+c_d<=1;
+c_e<=0;
+y<=A;
+end
+
+D: begin
+disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+s_d<=0;
+c_e<=1;
+y<=A;
+end
+
+E: begin
+
+disp_1=4'b0000;
+disp_2=4'b0101; //50
+disp_3=4'b0000;
+
+case (coin_input)
+3'b111: y<=H;
+default: begin
+if (c_a)
+y<=F;
+else if (s_a)
+y<=G;
+else
+y<=E;
+end
+endcase
+end
+
+F: begin
+disp_1=4'b0101;
+disp_2=4'b0010; //25 cents
+disp_3=4'b0000;
+c_d<=1;
+c_e<=1;
+y<=A;
+end
+
+G: begin
+disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+s_d<=1;
+c_e<=0;
+y<=A;
+end
+
+H: begin
+disp_1=4'b0101;
+disp_2=4'b0111; //75 cents
+disp_3=4'b0000;
+if (ch_a)
+y<=I;
+else
+y<=H;
+end
+
+I: begin
+disp_1=4'b0000; disp_2=4'b0000; disp_3=4'b0000; disp_4=4'b0000;
+ch_d<=1;
+c_d<=0;
+s_d<=0;
+c_e<=0;
+y<=A;
+end
+
+endcase
+endmodule

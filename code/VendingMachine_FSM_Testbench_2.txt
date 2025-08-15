@@ -1,0 +1,61 @@
+`timescale 1ns / 1ps
+
+module fsm_tb;
+
+  // Inputs
+  reg clock, reset;
+  reg c0, c1, c2;
+  reg c_a;         // included but unused
+  reg ch_a;        // used
+  reg s_a;         // included but unused
+
+  // Outputs
+  wire [3:0] disp_1, disp_2, disp_3, disp_4;
+  wire s_d;        // included but unused
+  wire c_d;        // included but unused
+  wire ch_d;       // used
+  wire c_e;
+
+  // Instantiate the FSM
+  fsm uut (
+    .clock(clock),
+    .reset(reset),
+    .c0(c0), .c1(c1), .c2(c2),
+    .c_a(c_a),        // unused
+    .ch_a(ch_a),      // used
+    .s_a(s_a),        // unused
+    .s_d(s_d),        // unused
+    .c_d(c_d),        // unused
+    .ch_d(ch_d),      // used
+    .c_e(c_e),
+    .disp_1(disp_1), .disp_2(disp_2), .disp_3(disp_3), .disp_4(disp_4)
+  );
+
+  // Clock generation: 10ns period
+  always #5 clock = ~clock;
+
+  initial begin
+    // Initialize inputs
+    clock = 0;
+    reset = 1;
+    c0 = 0; c1 = 0; c2 = 0;
+    c_a = 0;
+    ch_a = 0;
+    s_a = 0;
+
+    // Apply reset
+    #10 reset = 0;
+
+    // Insert 75 cents (3'b111)
+    #10 c0 = 1; c1 = 1; c2 = 1;
+    #10 c0 = 0; c1 = 0; c2 = 0;
+
+    // Wait in state H
+    #20;
+
+    // Press chip button only
+    ch_a = 1;
+    #10 ch_a = 0;
+
+    // Wait to observe chip dispense and change
+    #40;
