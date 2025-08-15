@@ -103,4 +103,4 @@ Developed as part of my **Honors College independent project** at **Wayne State 
 ---
 
 ## 🙏 Credits
-Special thanks to **Mohammad Alhawari** for guidan
+Special thanks to **Mohammad Alhawari** for guidance and support throughout the project.
