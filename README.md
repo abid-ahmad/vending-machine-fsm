@@ -64,31 +64,34 @@ Developed as part of my **Honors College independent project** at **Wayne State 
 
 ## ▶️ How to Run the Project
 
-### 🖥 Simulation
-1. Open **Vivado** and create a new project.
-2. Add the `.txt` files from `/code` (rename to `.v` when importing).
-3. Add the testbench file.
-4. Run **Behavioral Simulation**.
-5. Check waveform to verify correct FSM behavior.
-
-### ⚡ FPGA Deployment
-1. **Download full project**:
+### 🖥 Simulation (Vivado)
+1. **Download the full project ZIP**:
    - [📦 vending_machine_fsm_full_project.zip](code/vending_machine_fsm_full_project.zip)
 2. **Extract the ZIP**:
    - Windows: Right-click → "Extract All"
    - macOS: Double-click to unzip
-3. Open the `.xpr` Vivado project file.
-4. Click **Generate Bitstream** ⚙️.
-5. Connect the **Nexys A7 board** via USB.
-6. Click **Program Device** → Select generated `.bit` file.
+3. Open the `.xpr` file in **Vivado**.
+4. Run **Behavioral Simulation** directly.
+5. View the waveform to verify correct FSM behavior — no manual file adding is required.
+
+---
+
+### ⚡ FPGA Deployment
+1. **Download and extract** the same ZIP file as above.
+2. Open the `.xpr` file in **Vivado**.
+3. Click **Generate Bitstream** ⚙️.
+4. Connect the **Nexys A7 board** via USB.
+5. Click **Program Device** → Select generated `.bit` file.
+
+---
 
 ### 🛠 Troubleshooting
 - ❌ **Bitstream fails to generate?**
-  - Ensure correct **Constraints (.xdc)** file is included.
+  - Ensure FPGA drivers are installed and the board is detected.
 - ❌ **Display not working?**
-  - Check 7-seg wiring matches the constraints file.
-- ❌ **States stuck?**
-  - Reset FPGA and verify pushbutton inputs.
+  - Check that the 7-seg wiring matches the included constraints file.
+- ❌ **FSM stuck in one state?**
+  - Press the reset button and confirm pushbutton inputs are functional.
 
 ---
 
