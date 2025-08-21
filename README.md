@@ -107,4 +107,4 @@ Electrical & Computer Engineering — Wayne State University
 🌐 [LinkedIn](https://www.linkedin.com/in/abid-ahmad-83bb0527b) 
 
 ##  Credits
-Special thanks to **Mohammad Alhawari** for guidance and support throughout the project.
+Special thanks to **Professor Mohammad Alhawari and Valentina Shabbi** for guidance and support throughout the project.
